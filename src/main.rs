@@ -2,6 +2,7 @@ fn main() {
     println!("Hello, world!");
 
     example1();
+    example2();
 }
 
 fn example1() {
@@ -14,6 +15,28 @@ fn example1() {
 }
 
 fn longest1<'a>(str1: &'a str, str2: &'a str) -> &'a str {
+    if str1.len() > str2.len() {
+        str1
+    } else {
+        str2
+    }
+}
+
+fn example2() {
+    println!("example 2");
+
+    let long = "123456".to_string();
+
+    {
+        let short = "123".to_string();
+
+        let res = longest2(&long, &short);
+
+        println!("The longest string is {}", res);
+    }
+}
+
+fn longest2<'a>(str1: &'a str, str2: &'a str) -> &'a str {
     if str1.len() > str2.len() {
         str1
     } else {
