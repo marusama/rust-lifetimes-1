@@ -7,10 +7,7 @@
 			"problemMatcher": [
 				"$rustc"
 			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
+			"group": "build",
 			"label": "Rust: cargo build - lifetimes-1"
 		},
 		{
@@ -19,7 +16,11 @@
 			"problemMatcher": [
 				"$rustc"
 			],
-			"label": "Rust: cargo run - lifetimes-1"
+			"label": "Rust: cargo run - lifetimes-1",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }
