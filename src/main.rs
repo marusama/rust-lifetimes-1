@@ -3,6 +3,7 @@ fn main() {
 
     example1();
     example2();
+    example3();
 }
 
 fn example1() {
@@ -41,5 +42,23 @@ fn longest2<'a>(str1: &'a str, str2: &'a str) -> &'a str {
         str1
     } else {
         str2
+    }
+}
+
+fn example3() {
+    println!("example 3");
+
+    let g = Game { level: &3 };
+
+    println!("The level is {}", g.level(&5))
+}
+
+struct Game<'a> {
+    level: &'a i32,
+}
+
+impl Game<'_> {
+    fn level(&self, x: &i32) -> &i32 {
+        self.level
     }
 }
